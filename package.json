@@ -1,0 +1,33 @@
+{
+  "name": "svg-tint-stream",
+  "version": "0.0.0",
+  "description": "Tint SVGs in a streaming manner",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Financial-Times/svg-tint-stream.git"
+  },
+  "homepage": "https://github.com/Financial-Times/svg-tint-stream",
+  "bugs": "https://github.com/Financial-Times/svg-tint-stream/issues",
+  "license": "MIT",
+  "main": "lib/svg-tint-stream.js",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^2",
+    "istanbul": "~0.4",
+    "mocha": "^2",
+    "mockery": "^1",
+    "proclaim": "^3",
+    "sinon": "^1"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "npm run lint && npm run test-coverage && npm run test-integration",
+    "test-unit": "NODE_ENV=test ./node_modules/.bin/mocha ./test/unit --recursive",
+    "test-instrument": "NODE_ENV=test ./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -- ./test/unit --recursive",
+    "test-coverage": "npm run test-instrument && ./node_modules/.bin/istanbul check-coverage --statement 90 --branch 90 --function 90",
+    "test-integration": "NODE_ENV=test ./node_modules/.bin/mocha ./test/integration --recursive",
+    "lint": "./node_modules/.bin/eslint ."
+  }
+}
