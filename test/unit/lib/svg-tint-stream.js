@@ -1,7 +1,6 @@
 'use strict';
 
 const assert = require('proclaim');
-// const mockery = require('mockery');
 const sinon = require('sinon');
 
 describe('lib/svg-tint-stream', () => {
