@@ -13,7 +13,7 @@ Table Of Contents
 -----------------
 
 - [Requirements](#requirements)
-- [Usage](#javascript-interface)
+- [Usage](#usage)
 - [Configuration](#configuration)
 - [How it works](#how-it-works)
 - [Contributing](#contributing)
@@ -142,7 +142,7 @@ So if you create an `SvgTintStream` with a color of `#ff0000`, the following sty
 Contributing
 ------------
 
-To contribute to SVG Tint Stream, clone this repo locally and commit your code on a separate branch.
+To contribute to SVG Tint Stream, clone this repo locally and commit your code on a separate branch. You'll need to install [Bower] and run `bower install` to load in the SVG fixtures we use for testing.
 
 Please write unit tests for your code, and check that everything works by running the following before opening a pull-request:
 
@@ -162,6 +162,7 @@ This software is published by the Financial Times under the [MIT licence][licens
 
 
 
+[bower]: https://bower.io/
 [express]: https://expressjs.com/
 [license]: http://opensource.org/licenses/MIT
 [node]: https://nodejs.org/
