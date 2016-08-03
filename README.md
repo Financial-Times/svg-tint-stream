@@ -74,6 +74,33 @@ const svgStream = new SvgTintStream({
 requestStream.pipe(svgStream).pipe(process.stdout);
 ```
 
+### Tint an SVG on the file system and serve it with Express
+
+This example uses [Express], and tints the SVG based on a URL parameter.
+
+```js
+const app = express();
+
+// Handle request to /svg/:color, tinting the SVG
+// and piping it into the response
+app.get('/svg/:color', (request, response) => {
+
+    // Create the various streams
+    const readStream = fs.createReadStream('input.svg', 'utf-8');
+    const svgStream = new SvgTintStream({
+        color: `#${request.params.color}`
+    });
+
+    // Pipe the original SVG through the transform
+    // and then into the response
+    response.set('Content-Type', 'image/svg+xml');
+    readStream.pipe(svgStream).pipe(response);
+
+});
+
+app.listen(8080);
+```
+
 
 Configuration
 -------------
@@ -135,6 +162,7 @@ This software is published by the Financial Times under the [MIT licence][licens
 
 
 
+[express]: https://expressjs.com/
 [license]: http://opensource.org/licenses/MIT
 [node]: https://nodejs.org/
 [npm]: https://www.npmjs.com/
