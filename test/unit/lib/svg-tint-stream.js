@@ -96,7 +96,41 @@ describe('lib/svg-tint-stream', () => {
 			describe('when the opening <svg> element has attributes', () => {
 
 				beforeEach(() => {
-					chunks[1] = new Buffer('<svg foo="bar" bar="<baz>">');
+					chunks[1] = new Buffer('<svg foo="bar" bar=\'baz\'>');
+					chunks.forEach(chunk => svgStream._transform(chunk, null, callback));
+				});
+
+				it('adds the style block after the opening <svg> tag', () => {
+					assert.callOrder(
+						svgStream.push.withArgs(chunks[0].toString()),
+						svgStream.push.withArgs(chunks[1].toString() + '{STYLES}'),
+						svgStream.push.withArgs(chunks[2])
+					);
+				});
+
+			});
+
+			describe('when the opening <svg> element has attributes that contain right arrows', () => {
+
+				beforeEach(() => {
+					chunks[1] = new Buffer('<svg foo="<bar>" bar=\'<baz>\'>');
+					chunks.forEach(chunk => svgStream._transform(chunk, null, callback));
+				});
+
+				it('adds the style block after the opening <svg> tag', () => {
+					assert.callOrder(
+						svgStream.push.withArgs(chunks[0].toString()),
+						svgStream.push.withArgs(chunks[1].toString() + '{STYLES}'),
+						svgStream.push.withArgs(chunks[2])
+					);
+				});
+
+			});
+
+			describe('when the opening <svg> element has attributes that contain quotes', () => {
+
+				beforeEach(() => {
+					chunks[1] = new Buffer('<svg foo="\'" bar=\'""\'>');
 					chunks.forEach(chunk => svgStream._transform(chunk, null, callback));
 				});
 
