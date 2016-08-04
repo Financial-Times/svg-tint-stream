@@ -186,6 +186,34 @@ describe('lib/svg-tint-stream', () => {
 			});
 		});
 
+		describe('when `options.color` has no preceeding hash', () => {
+
+			beforeEach(() => {
+				svgStream = new SvgTintStream({
+					color: 'f00'
+				});
+			});
+
+			it('the hash is added', () => {
+				assert.deepEqual(svgStream.options, {
+					color: '#f00'
+				});
+			});
+
+		});
+
+		describe('when `options.color` is an invalid hex code', () => {
+
+			it('it throws an error', () => {
+				assert.throws(() => {
+					svgStream = new SvgTintStream({
+						color: 'red'
+					});
+				}, 'Tint color must be a valid hex code');
+			});
+
+		});
+
 	});
 
 	describe('new SvgTintStream(color)', () => {

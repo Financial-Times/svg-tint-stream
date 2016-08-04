@@ -88,7 +88,7 @@ app.get('/svg/:color', (request, response) => {
     // Create the various streams
     const readStream = fs.createReadStream('input.svg', 'utf-8');
     const svgStream = new SvgTintStream({
-        color: `#${request.params.color}`
+        color: request.params.color
     });
 
     // Pipe the original SVG through the transform
@@ -107,7 +107,7 @@ Configuration
 
 ### `color`
 
-_String_. The hex colour code to use when tinting the SVG. This should include a preceeding `#` character.
+_String_. The hex colour code to use when tinting the SVG.
 
 ```js
 const stream = new SvgTintStream({
