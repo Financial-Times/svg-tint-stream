@@ -121,6 +121,26 @@ If the `options` argument is a string, then it will be used as a colour value. S
 const stream = new SvgTintStream('#ff0000');
 ```
 
+### `fill`
+
+_Boolean_. Whether to tint fills in the SVG. Defaults to `true`.
+
+```js
+const stream = new SvgTintStream({
+	fill: false
+});
+```
+
+### `stroke`
+
+_Boolean_. Whether to tint strokes in the SVG. Defaults to `true`.
+
+```js
+const stream = new SvgTintStream({
+	stroke: false
+});
+```
+
 
 How it works
 ------------

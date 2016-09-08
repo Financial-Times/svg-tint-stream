@@ -24,7 +24,9 @@ describe('lib/svg-tint-stream', () => {
 		it('has an `options` property set to the expected value', () => {
 			assert.isObject(svgStream.options);
 			assert.deepEqual(svgStream.options, {
-				color: '#000'
+				color: '#000',
+				fill: true,
+				stroke: true
 			});
 		});
 
@@ -182,7 +184,9 @@ describe('lib/svg-tint-stream', () => {
 		it('has an `options` property set to the expected value', () => {
 			assert.isObject(svgStream.options);
 			assert.deepEqual(svgStream.options, {
-				color: '#f00'
+				color: '#f00',
+				fill: true,
+				stroke: true
 			});
 		});
 
@@ -196,7 +200,9 @@ describe('lib/svg-tint-stream', () => {
 
 			it('the hash is added', () => {
 				assert.deepEqual(svgStream.options, {
-					color: '#f00'
+					color: '#f00',
+					fill: true,
+					stroke: true
 				});
 			});
 
@@ -214,6 +220,54 @@ describe('lib/svg-tint-stream', () => {
 
 		});
 
+		describe('when `options.fill` is `false`', () => {
+
+			beforeEach(() => {
+				svgStream = new SvgTintStream({
+					color: 'f00',
+					fill: false
+				});
+			});
+
+			describe('.getStyleBlock()', () => {
+				let styleBlock;
+
+				beforeEach(() => {
+					styleBlock = svgStream.getStyleBlock();
+				});
+
+				it('returns an SVG style block as a string', () => {
+					assert.strictEqual(styleBlock, '<style>*{stroke:#f00!important;}</style>');
+				});
+
+			});
+
+		});
+
+		describe('when `options.stroke` is `false`', () => {
+
+			beforeEach(() => {
+				svgStream = new SvgTintStream({
+					color: 'f00',
+					stroke: false
+				});
+			});
+
+			describe('.getStyleBlock()', () => {
+				let styleBlock;
+
+				beforeEach(() => {
+					styleBlock = svgStream.getStyleBlock();
+				});
+
+				it('returns an SVG style block as a string', () => {
+					assert.strictEqual(styleBlock, '<style>*{fill:#f00!important;}</style>');
+				});
+
+			});
+
+		});
+
 	});
 
 	describe('new SvgTintStream(color)', () => {
@@ -226,7 +280,9 @@ describe('lib/svg-tint-stream', () => {
 		it('has an `options` property set to the expected value', () => {
 			assert.isObject(svgStream.options);
 			assert.deepEqual(svgStream.options, {
-				color: '#0f0'
+				color: '#0f0',
+				fill: true,
+				stroke: true
 			});
 		});
 
