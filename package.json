@@ -1,6 +1,6 @@
 {
   "name": "svg-tint-stream",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Tint SVGs in a streaming manner",
   "repository": {
     "type": "git",
