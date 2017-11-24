@@ -12,6 +12,7 @@
   "main": "lib/svg-tint-stream.js",
   "dependencies": {},
   "devDependencies": {
+    "@financial-times/origami-service-makefile": "^6.0.1",
     "eslint": "^4",
     "istanbul": "~0.4",
     "mocha": "^4",
@@ -20,13 +21,5 @@
   },
   "engines": {
     "node": ">=4"
-  },
-  "scripts": {
-    "test": "npm run lint && npm run test-coverage && npm run test-integration",
-    "test-unit": "NODE_ENV=test ./node_modules/.bin/mocha ./test/unit --recursive",
-    "test-instrument": "NODE_ENV=test ./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -- ./test/unit --recursive",
-    "test-coverage": "npm run test-instrument && ./node_modules/.bin/istanbul check-coverage --statement 90 --branch 90 --function 90",
-    "test-integration": "NODE_ENV=test ./node_modules/.bin/mocha ./test/integration --recursive",
-    "lint": "./node_modules/.bin/eslint ."
   }
 }

@@ -7,11 +7,10 @@ node_js:
   - "8"
 before_install:
   - npm install -g bower
+  - npm i -g npm@^5
   - bower install
 script:
-  - npm run lint
-  - npm run test-coverage
-  - npm run test-integration
+  - make ci
 cache:
   directories:
   - node_modules
