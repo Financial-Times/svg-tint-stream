@@ -1,4 +1,4 @@
-name: Test Origami npm library
+name: Test
 on: [push]
 jobs:
   build:
