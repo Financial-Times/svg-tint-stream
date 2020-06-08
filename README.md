@@ -167,7 +167,7 @@ npm run test-integration  # run the integration tests
 
 State | Major Version | Last Minor Release | Migration guide |
 :---: | :---: | :---: | :---:
-✨ active | 8 | N/A | [migrate to v1](MIGRATION.md#migrating-from-v0.4.1-to-v1) |
+✨ active | 1 | N/A | [migrate to v1](MIGRATION.md#migrating-from-v0.4.1-to-v1) |
 ╳ deprecated | 0 | 0.4 | N/A |
 
 
