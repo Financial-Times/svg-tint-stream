@@ -13,7 +13,7 @@
   "dependencies": {},
   "devDependencies": {
     "@financial-times/origami-service-makefile": "^7.0.3",
-    "eslint": "^4",
+    "eslint": "^7",
     "istanbul": "~0.4",
     "mocha": "^7",
     "proclaim": "^3",
