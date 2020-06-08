@@ -1,33 +1,25 @@
 
-SVG Tint Stream
-===============
+# SVG Tint Stream
 
 Set the fill and stroke colours of SVGs with streams.
 
-[![NPM version](https://img.shields.io/npm/v/svg-tint-stream.svg)](https://www.npmjs.com/package/svg-tint-stream)
-[![Build status](https://img.shields.io/travis/Financial-Times/svg-tint-stream.svg)](https://travis-ci.org/Financial-Times/svg-tint-stream)
-[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)][license]
-
-
-Table Of Contents
------------------
+## Table Of Contents
 
 - [Requirements](#requirements)
 - [Usage](#usage)
 - [Configuration](#configuration)
 - [How it works](#how-it-works)
 - [Contributing](#contributing)
+- [Migration guide](#migration-guide)
+- [Contact](#contact)
 - [License](#license)
 
+## Requirements
 
-Requirements
-------------
-
-You'll need [Node.js][node] 4+ installed to run SVG Tint Stream.
+You'll need [Node.js][node] 12+ installed to run SVG Tint Stream.
 
 
-Usage
------
+## Usage
 
 Install SVG Tint Stream with [npm][npm] or add to your `package.json`:
 
@@ -102,8 +94,7 @@ app.listen(8080);
 ```
 
 
-Configuration
--------------
+## Configuration
 
 ### `color`
 
@@ -142,8 +133,7 @@ const stream = new SvgTintStream({
 ```
 
 
-How it works
-------------
+## How it works
 
 SVG Tint Stream adds a new `<style>` element to the top of your SVG and sets some important style rules. This overrides the fill and stroke colours of all elements.
 
@@ -159,8 +149,7 @@ So if you create an `SvgTintStream` with a color of `#ff0000`, the following sty
 ```
 
 
-Contributing
-------------
+## Contributing
 
 To contribute to SVG Tint Stream, clone this repo locally and commit your code on a separate branch. You'll need to install [Bower] and run `bower install` to load in the SVG fixtures we use for testing.
 
@@ -174,13 +163,23 @@ npm run test-coverage     # run the unit tests with coverage reporting
 npm run test-integration  # run the integration tests
 ```
 
+## Migration guide
 
-License
--------
+State | Major Version | Last Minor Release | Migration guide |
+:---: | :---: | :---: | :---:
+✨ active | 8 | N/A | [migrate to v1](MIGRATION.md#migrating-from-v0.4.1-to-v1) |
+╳ deprecated | 0 | 0.4 | N/A |
+
+
+## Contact
+
+If you have any questions or comments about `svg-tint-stream`, or need help using it, please either [raise an issue](https://github.com/Financial-Times/svg-tint-stream/issues), visit [#origami-support](https://financialtimes.slack.com/messages/origami-support/) or email [Origami Support](mailto:origami-support@ft.com).
+
+----
+
+## Licence
 
 This software is published by the Financial Times under the [MIT licence][license].
-
-
 
 [bower]: https://bower.io/
 [express]: https://expressjs.com/
