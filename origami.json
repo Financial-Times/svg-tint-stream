@@ -1,6 +1,6 @@
 {
 	"description": "Tint SVGs in a streaming manner",
-	"origamiType": null,
+	"origamiType": "library",
 	"origamiVersion": 1,
 	"keywords": [],
 	"support": "https://github.com/Financial-Times/svg-tint-stream/issues",
