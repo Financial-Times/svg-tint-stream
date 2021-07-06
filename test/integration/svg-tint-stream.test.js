@@ -6,8 +6,7 @@ const path = require('path');
 const SvgTintStream = require('../../lib/svg-tint-stream');
 
 const fixtures = getFixtureList([
-	path.resolve(__dirname, 'fixture'),
-	path.resolve(__dirname, '../../bower_components/o-icons/svg')
+	path.resolve(__dirname, 'fixture')
 ]);
 
 describe('streaming SVGs', () => {
