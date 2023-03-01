@@ -15,7 +15,7 @@
     "@financial-times/origami-service-makefile": "^7.0.3",
     "eslint": "^7",
     "istanbul": "~0.4",
-    "mocha": "^8",
+    "mocha": "^10",
     "proclaim": "^3",
     "sinon": "^10"
   },
